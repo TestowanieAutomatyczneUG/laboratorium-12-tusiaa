@@ -9,87 +9,90 @@ class RandomUser:
                 raise Exception
             else:
                 url= 'https://randomuser.me/api/?seed=' + seed
-            self = requests.get(url).json()
+            self.randomUser = requests.get(url).json()
             if self is None:
                 raise Exception
         except:
             raise ValueError("Something went wrong")
 
     def get_info(self):
-        return self.info
+        return self.randomUser["info"]
 
     def get_user(self):
-        return self.results[0]
+        return self.randomUser["results"][0]
 
     def get_gender(self):
-        return self.results[0]["gender"]
+        return self.randomUser["results"][0]["gender"]
 
     def get_name(self):
-        return self.results[0]["name"]
+        return self.randomUser["results"][0]["name"]
 
     def get_title(self):
-        return self.results[0]["name"]["title"]
+        return self.randomUser["results"][0]["name"]["title"]
 
     def get_first_name(self):
-        return self.results[0]["name"]["first"]
+        return self.randomUser["results"][0]["name"]["first"]
 
     def get_last_name(self):
-        return self.results[0]["name"]["last"]    
+        return self.randomUser["results"][0]["name"]["last"]    
 
     def get_location(self):
-        return self.results[0]["location"]
+        return self.randomUser["results"][0]["location"]
 
     def get_street(self):
-        return self.results[0]["location"]["street"]
+        return self.randomUser["results"][0]["location"]["street"]
 
     def get_city(self):
-        return self.results[0]["location"]["city"]
+        return self.randomUser["results"][0]["location"]["city"]
 
     def get_state(self):
-        return self.results[0]["location"]["state"]
+        return self.randomUser["results"][0]["location"]["state"]
+
+    def get_country(self):
+        return self.randomUser["results"][0]["location"]["country"]
 
     def get_postcode(self):
-        return self.results[0]["location"]["postcode"]
+        return self.randomUser["results"][0]["location"]["postcode"]
 
     def get_coordinates(self):
-        return self.results[0]["location"]["coordinates"]
+        return self.randomUser["results"][0]["location"]["coordinates"]
 
     def get_timezone(self):
-        return self.results[0]["location"]["timezone"]
+        return self.randomUser["results"][0]["location"]["timezone"]
 
     def get_email(self):
-        return self.results[0]["email"]
+        return self.randomUser["results"][0]["email"]
 
     def get_login(self):
-        return self.results[0]["login"]
+        return self.randomUser["results"][0]["login"]
 
     def get_uuid(self):
-        return self.results[0]["login"]["uuid"]
+        return self.randomUser["results"][0]["login"]["uuid"]
 
     def get_username(self):
-        return self.results[0]["login"]["username"]
+        return self.randomUser["results"][0]["login"]["username"]
 
     def get_password(self):
-        return self.results[0]["login"]["password"]
+        return self.randomUser["results"][0]["login"]["password"]
 
     def get_dob(self):
-        return self.results[0]["dob"]
+        return self.randomUser["results"][0]["dob"]
 
     def get_registered(self):
-        return self.results[0]["registered"]
+        return self.randomUser["results"][0]["registered"]
 
     def get_phone(self):
-        return self.results[0]["phone"]
+        return self.randomUser["results"][0]["phone"]
 
     def get_cell(self):
-        return self.results[0]["cell"]
+        return self.randomUser["results"][0]["cell"]
 
     def get_id(self):
-        return self.results[0]["id"]
+        return self.randomUser["results"][0]["id"]
 
     def get_picture(self):
-        return self.results[0]["picture"]
+        return self.randomUser["results"][0]["picture"]
 
     def get_nat(self):
-        return self.results[0]["nat"]
+        return self.randomUser["results"][0]["nat"]
 
